@@ -1,11 +1,17 @@
 name: Continuous Integration
 
-on: [push]   # Will make the workflow run every time you push to any branch
+on: [push]
 
 jobs:
   build:
     name: Build and test
-    runs-on: ubuntu-latest   # Sets the build environment to latest Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4   # Checks out the repository code
+      - uses: actions/checkout@v4
+
+      - name: Hello world
+        uses: actions/hello-world-javascript-action@v1.1
+        with:
+          who-to-greet: "Mona the Octocat"
+``
